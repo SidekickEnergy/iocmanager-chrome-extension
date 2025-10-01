@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extension Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+  <div class="section-box">
+    <h2>User Identity</h2>
+    <label for="userFirstName">First Name:</label>
+    <input type="text" id="userFirstName" placeholder="First name">
+
+    <label for="userLastName">Last Name:</label>
+    <input type="text" id="userLastName" placeholder="Last name">
+
+    <label for="userOrg">Organization:</label>
+    <input type="text" id="userOrg" placeholder="Your organization or team">
+
+    <label for="userEmail">Email (optional):</label>
+    <input type="text" id="userEmail" placeholder="your@email.com">
+
+    <label for="baseUrl">Backend Base URL:</label>
+    <input type="text" id="baseUrl" placeholder="https://iocmanager.azurewebsites.net">
+  </div>
+
+  <div class="section-box">
+    <h2>API Keys</h2>
+
+    <label for="vtKey">VirusTotal API Key:</label>
+    <input type="text" id="virustotal_apiKey" placeholder="Paste your VT API key here">
+
+    <label for="misp_url">MISP Base URL:</label>
+    <input type="text" id="misp_url" placeholder="https://misp.example.org" />
+
+
+    <label for="mispKey">MISP API Key:</label>
+    <input type="text" id="mispKey" placeholder="Paste your MISP API key here">
+
+    <label for="edl_url">EDL Base URL</label>
+    <input type="text" id="edl_url" placeholder="https://edl.example.com">
+
+    <label for="edlKey">EDL API Key:</label>
+    <input type="text" id="edlKey" placeholder="Paste your EDL API key here">
+
+    <label for="dnsdbKey">DNSDB API Key:</label>
+    <input type="text" id="dnsdbKey" placeholder="Paste your DNSDB API key here">
+
+    <label for="dnsdb_url">DNSDB Base URL:</label>
+    <input type="text" id="dnsdb_url" placeholder="https://dnsdb.sie-europe.net/dnsdb/v2">
+
+    <label for="abuseipdb_apiKey">AbuseIPDB API Key:</label>
+    <input type="text" id="abuseipdb_apiKey" placeholder="Paste your AbuseIPDB API key here">
+
+    <label for="otxKey">AlienVault OTX API Key:</label>
+    <input type="text" id="otxKey" placeholder="Paste your OTX API key here">
+
+    <label for="umbrellaKey">Cisco Umbrella API Key:</label>
+    <input type="text" id="umbrella_apiKey" placeholder="Paste your Cisco Umbrella client ID" />
+
+    <label for="umbrellaSecret">Cisco Umbrella API Secret:</label>
+    <input type="text" id="umbrella_apiSecret" placeholder="Paste your Cisco Umbrella client secret" />
+
+  </div>
+
+  <button id="saveBtn">Save</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>

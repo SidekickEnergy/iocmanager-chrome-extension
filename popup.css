@@ -1,0 +1,540 @@
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  width: 600px;
+  height: 500px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #555;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #444;
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 24px;
+  padding-left: 8px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+.source-block {
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+.source-block strong {
+  color: #80cbc4;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#summary {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.summary-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-title-row h4 {
+  margin: 0;
+}
+
+.block-link {
+  font-size: 13px;
+  color: #fff;
+  background-color: #2196f3;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #1976d2;
+  transition: background-color 0.2s ease;
+}
+
+.block-link:hover {
+  background-color: #1976d2;
+}
+
+
+.summary-card {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.summary-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.summary-card ul {
+  list-style-type: disc;
+  margin-left: 16px;
+  padding-left: 6px;
+}
+
+.summary-card li {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.summary-card .sources {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+/* Results */
+#results {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 15px;
+  white-space: normal;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #80cbc4;
+  margin-bottom: 6px;
+}
+
+.toggle-btn {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.toggle-btn:hover {
+  background-color: #666;
+}
+
+.collapsible-body {
+  display: block;
+  margin-left: 10px;
+}
+
+.collapsible-content {
+  display: none;
+  margin-top: 6px;
+}
+
+.collapsible-title {
+  cursor: pointer;
+  color: #80cbc4;
+  margin-top: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.collapsible-title::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.collapsible-title.active::before {
+  content: "▼";
+}
+
+.intel-subsection {
+  background-color: #333;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.intel-subtitle {
+  font-weight: bold;
+  font-size: 15px;
+  color: #90caf9;
+  margin-bottom: 6px;
+  display: inline-block;
+  text-decoration: none;
+}
+.intel-subtitle:hover {
+  text-decoration: underline;
+}
+
+.intel-subtitle a {
+  color: inherit;           /* Match parent text color */
+  text-decoration: none;    /* Remove underline */
+  font-weight: bold;        /* Optional: Keep bold if needed */
+}
+
+.intel-subtitle a:hover {
+  text-decoration: underline; /* Optional: show underline on hover */
+}
+
+
+.vt-score-row {
+  display: flex;
+  justify-content: flex-start; /* Align row to the left */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.vt-score-box {
+  background-color: #444;
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: left;       /* KEEP center alignment inside */
+  flex: 1;                  /* Make boxes equal width again */
+  min-width: 90px;          /* Prevents from shrinking too much */
+  max-width: 120px;
+}
+
+
+.vt-score-box .score {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.vt-score-box .label {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 4px;
+}
+
+.vt-score-box.good {
+  background-color: #4caf50;
+}
+
+.vt-score-box.warn {
+  background-color: #db8300;
+}
+
+.vt-score-box.bad {
+  background-color: #f44336;
+}
+
+.vt-tags {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* AbuseIPDB details (styled like VT) */
+.abuse-details {
+  margin-top: 6px;
+  margin-left: 18px;
+  font-size: 14px;
+  list-style: disc;
+  padding-left: 12px;
+}
+
+.otx-pulse-count {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 8px;
+  margin-left: 2px;
+}
+
+.otx-pulse {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.otx-pulse-link {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+.otx-pulse-link:hover {
+  text-decoration: underline;
+}
+
+.otx-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #90caf9;
+  margin-bottom: 4px;
+}
+
+.otx-date {
+  font-weight: normal;
+  color: #bbb;
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.otx-tags {
+  margin: 6px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background-color: #607d8b;
+  border-radius: 12px;
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.otx-ref {
+  margin-top: 6px;
+}
+
+.otx-ref a {
+  font-size: 13px;
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.otx-ref a:hover {
+  text-decoration: underline;
+}
+
+.otx-desc-toggle {
+  font-size: 13px;
+  color: #4fc3f7;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.otx-description {
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+
+.dnsdb-list {
+  margin-top: 6px;
+  margin-left: 18px;
+  font-size: 14px;
+  list-style: disc;
+  padding-left: 12px;
+}
+
+.dnsdb-list li {
+  margin-bottom: 4px;
+}
+
+.misp-list {
+  margin-top: 6px;
+  margin-left: 18px;
+  font-size: 14px;
+  list-style: disc;
+  padding-left: 12px;
+}
+
+.misp-list li {
+  margin-bottom: 4px;
+}
+
+/* Defender Section Styles */
+.defender-summary {
+  font-size: 14px;
+  margin-bottom: 6px;
+  padding-left: 0;
+  font-weight: 500;
+  color: #ccc;
+}
+
+/* Defender Score Blocks */
+.defender-score-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 6px;
+}
+
+.defender-score-box {
+  flex: 1;
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 8px;
+  background-color: #444; /* fallback for 0 scores */
+  color: #fff;
+  min-width: 90px;
+  max-width: 120px;
+}
+
+.defender-score-box.informational {
+  background-color: #2196f3;
+}
+
+.defender-score-box.low {
+  background-color: #4caf50;
+}
+
+.defender-score-box.medium {
+  background-color: #ff9800;
+}
+
+.defender-score-box.high {
+  background-color: #f44336;
+}
+
+.defender-score-box.unknown {
+  background-color: #9e9e9e;
+}
+
+.defender-score-box .score {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.defender-score-box .label {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* Defender Alert Box Toggle and List */
+.defender-toggle {
+  font-size: 13px;
+  color: #4fc3f7;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.defender-alerts {
+  margin-top: 6px;
+  padding-left: 0;
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* Individual Alert Box per severity (with left border) */
+.defender-alert-box {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #444;
+  border-left: 6px solid #888;
+}
+
+.defender-alert-box.high {
+  background-color: #fdecea;
+  border-left: 6px solid #f44336;
+  color: #111;
+}
+
+.defender-alert-box.medium {
+  background-color: #fff4e5;
+  border-left: 6px solid #ff9800;
+  color: #111;
+}
+
+.defender-alert-box.low {
+  background-color: #e8f5e9;
+  border-left: 6px solid #4caf50;
+  color: #111;
+}
+
+.defender-alert-box.informational {
+  background-color: #e3f2fd;
+  border-left: 6px solid #2196f3;
+  color: #111;
+}
+
+.defender-alert-box.unknown {
+  background-color: #eeeeee;
+  border-left: 6px solid #9e9e9e;
+  color: #111;
+}
+
+.defender-alert-link {
+  color: #1196d3;
+  text-decoration: none;
+}
+
+.defender-alert-link:hover {
+  text-decoration: underline;
+}
+
+#navIcons {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+#navIcons a img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  filter: invert(100%);
+  transition: opacity 0.2s ease;
+}
+
+#navIcons a img:hover {
+  opacity: 1;
+}
+
+
+#iocInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  color: #eee;
+  resize: vertical;
+}

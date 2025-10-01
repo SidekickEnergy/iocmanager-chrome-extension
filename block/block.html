@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IoC Blocker</title>
+  <link rel="stylesheet" href="block.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Block Indicator of Compromise</h1>
+    <label for="ioc">Indicator (IoC):</label>
+    <input type="text" id="ioc" placeholder="e.g. 8.8.8.8, sha-256, evil.com" />
+
+    <div class="service-section" data-service="defender">
+      <label class="toggle-label">
+        <input type="checkbox" class="service-toggle" data-target="defender-settings" />
+        <strong>Microsoft Defender</strong>
+      </label>
+      <div class="settings" id="defender-settings">
+        <label>Action:
+          <select>
+            <option value="alert">Alert only</option>
+            <option value="block">Block execution</option>
+            <option value="audit">Audit</option>
+          </select>
+        </label>
+        <label>Severity:
+          <select>
+            <option value="Informational">Informational</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="service-section" data-service="umbrella">
+      <label class="toggle-label">
+        <input type="checkbox" class="service-toggle" data-target="umbrella-settings" />
+        <strong>Cisco Umbrella</strong>
+      </label>
+      <div class="settings" id="umbrella-settings">
+        <label>Destination List:
+          <select id="umbrella-list-select"  name="destination_list">
+            <option disabled selected>Loading...</option>
+          </select>
+        </label>
+        <label>Comment:
+          <input type="text" name="comment" placeholder="e.g. blocked due to phishing" />
+        </label>
+      </div>
+    </div>
+
+    <div class="service-section" data-service="misp">
+      <label class="toggle-label">
+        <input type="checkbox" class="service-toggle" />
+        <strong>MISP</strong>
+      </label>
+      <div class="settings">
+        <label>TLP Tag:
+          <select name="tlp">
+            <option value="tlp:red">TLP:RED</option>
+            <option value="tlp:amber">TLP:AMBER</option>
+            <option value="tlp:green">TLP:GREEN</option>
+            <option value="tlp:white">TLP:WHITE</option>
+          </select>
+        </label>
+        <label>Comment:
+          <input type="text" name="comment" placeholder="e.g. Seen in phishing campaign" />
+        </label>
+      </div>
+    </div>
+
+    <div class="service-section" data-service="edl">
+      <label class="toggle-label">
+        <input type="checkbox" class="service-toggle" />
+        <strong>EDL</strong>
+      </label>
+      <div class="settings">
+        <label>Action:
+          <select name="action">
+            <option value="add">Add to EDL</option>
+            <option value="remove">Remove from EDL</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+
+    <button id="submit">Submit to Blocklists</button>
+  </div>
+
+  <script src="block.js"></script>
+</body>
+</html>
